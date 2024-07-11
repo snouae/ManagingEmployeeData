@@ -1,0 +1,14 @@
+# Ignore Entity Framework Core migrations
+/Migrations/
+
+# Ignore SQLite database file
+employees.db
+
+# Ignore temporary files
+*.log
+*.lock
+*.exe
+*.dll
+
+# Ignore environment configuration files
+.env

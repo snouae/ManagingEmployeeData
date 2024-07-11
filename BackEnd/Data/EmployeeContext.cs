@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using EmployeeManagementAPI.Models;
+using EmployeeManagement.Models;
 
 
 
-namespace EmployeeManagementAPI.Data
+namespace EmployeeManagement.Data
 {
     public class EmployeeContext : DbContext
     {
