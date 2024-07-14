@@ -2,8 +2,8 @@
 This project is a backend service for managing employees, built with .NET 8 and using SQLite as the database. The service provides CRUD operations for employee data.
 
 # Prerequisites
-.NET 8 SDK: Download and install .NET 8 SDK
-SQLite: SQLite is embedded within the .NET SDK, so no separate installation is required.
+- .NET 8 SDK: Download and install .NET 8 SDK
+- SQLite: SQLite is embedded within the .NET SDK, so no separate installation is required.
 
 # Project Structure
 The main folders and files in the project are as follows:
