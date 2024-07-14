@@ -1,0 +1,11 @@
+<div *ngIf="employee">
+    <h2>{{ employee.firstName }} - {{ employee.position }}</h2>
+    <button (click)="deleteEmployee()">Delete</button>
+</div>
+
+<div *ngIf="!employee">
+    <p>No employee found.</p>
+</div>
+
+
+

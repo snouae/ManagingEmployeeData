@@ -1,0 +1,65 @@
+/* navbar.component.css */
+.navbar {
+    background-color: #ffffff;
+    /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 0.75rem 1rem;
+    /* Padding for spacing */
+    border-radius: 0.25rem;
+    /* Rounded corners */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    /* Larger brand text */
+    color: #007bff;
+    /* Brand text color */
+}
+
+.navbar-toggler {
+    border: none;
+    /* Remove default border */
+}
+
+.navbar-toggler-icon {
+    color: #007bff;
+    /* Toggler icon color */
+}
+
+.nav-link {
+    margin-left: 1rem;
+    /* Space between links */
+    font-size: 1.1rem;
+    /* Slightly larger text */
+    color: #007bff;
+    /* Link color */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.nav-link:hover {
+    color: #0056b3;
+    /* Darker color on hover */
+}
+
+.nav-link.active {
+    font-weight: bold;
+    /* Bold text for active link */
+    color: #0056b3 !important;
+    /* Darker color for active link */
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+        /* Center align links on smaller screens */
+    }
+
+    .nav-link {
+        margin-left: 0;
+        /* Remove margin on smaller screens */
+        margin-bottom: 0.5rem;
+        /* Add bottom margin for spacing */
+    }
+}

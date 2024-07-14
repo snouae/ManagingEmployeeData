@@ -1,0 +1,15 @@
+<!-- employee-list.component.html -->
+<h2 class="employee-list-title">Employee List</h2>
+
+<div *ngIf="employees.length > 0; else noEmployees">
+    <ul>
+        <li *ngFor="let employee of employees">
+            {{ employee.firstName }} - {{ employee.position }}
+            <button (click)="deleteEmployee(employee.id)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<ng-template #noEmployees>
+    <p>No employees found.</p>
+</ng-template>

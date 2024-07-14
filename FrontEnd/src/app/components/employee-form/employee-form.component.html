@@ -1,0 +1,42 @@
+<!-- employee-form.component.html -->
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input id="firstName" formControlName="firstName" />
+        <div *ngIf="employeeForm.get('firstName')!.invalid && employeeForm.get('firstName')!.touched">
+            First Name is required.
+        </div>
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" formControlName="lastName" />
+        <div *ngIf="employeeForm.get('lastName')!.invalid && employeeForm.get('lastName')!.touched">
+            Last Name is required.
+        </div>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" />
+        <div *ngIf="employeeForm.get('email')!.invalid && employeeForm.get('email')!.touched">
+            Valid Email is required.
+        </div>
+    </div>
+    <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" formControlName="phoneNumber" />
+        <div *ngIf="employeeForm.get('phoneNumber')!.invalid && employeeForm.get('phoneNumber')!.touched">
+            Phone Number is required.
+        </div>
+    </div>
+    <div>
+        <label for="position">Position:</label>
+        <input id="position" formControlName="position" />
+    </div>
+    <div>
+        <label for="department">Department:</label>
+        <input id="department" formControlName="department" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+

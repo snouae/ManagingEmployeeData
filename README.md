@@ -46,9 +46,15 @@ The EmployeesController handles HTTP requests for employee data. It includes act
 To run the tests for the backend service, use the following command:
 ```
 dotnet test
+dotnet build
+dotnet run
 ```
 # Troubleshooting
-- EF Tools Not Found: Ensure the EF Core tools are installed globally using dotnet tool install --global dotnet-ef.
+- EF Tools Not Found: Ensure the EF Core tools are installed globally using .
+```
+dotnet tool install --global dotnet-ef
+export PATH="$PATH:$HOME/.dotnet/tools"
+```
 - Database Connection Issues: Check the connection string in appsettings.json to ensure it points to the correct SQLite database file.
 
 
