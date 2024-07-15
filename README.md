@@ -58,5 +58,121 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 - Database Connection Issues: Check the connection string in appsettings.json to ensure it points to the correct SQLite database file.
 
 
+# Employee Management System Frontend
+This project is the frontend application for the Employee Management System, developed using Angular and styled with CSS. The application interfaces with a .NET 8 API backend to manage employee data with CRUD operations.
+
+# Project Overview
+The Employee Management System Frontend allows users to perform CRUD operations (Create, Read, Update, Delete) on employee data. It connects to a .NET 8 API backend to fetch and manipulate data.
+
+
+# Features
+- View a list of employees
+- Add new employees
+- Edit existing employee details
+- Delete employees
+- Search employees by name, position, or department
+
+# Prerequisites
+Node.js and npm installed on your machine
+Angular CLI installed globally (npm install -g @angular/cli)
+
+
+# Installation
+- Clone the repository:
+```
+git clone git@github.com:snouae/ManagingEmployeeData.git
+cd ManagingEmployeeData/EmployeeManagementFront
+```
+
+- install dependencies :
+```
+npm install
+```
+
+- Environment Configuration:
+
+Ensure you have the correct API endpoint configured in your environment settings.
+
+Create a file named environment.ts in the src/environments folder with the following content:
+
+```
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:5200/api/employees' 
+};
+
+```
+
+# Project Structure
+Here is a brief overview of the project structure:
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── employee-list/
+│   │   ├── employee-form/
+│   │   ├── employee-detail
+│   ├── services/
+│   │   ├── employee.service.ts
+│   ├── app-routing.module.ts
+│   ├── app.component.ts
+│   ├── app.config.ts
+│   ├── app.routes.ts
+├── assets/
+├── environments/
+│   ├── environment.ts
+├── styles/
+│   ├── tailwind.css
+├── main.ts
+├── index.html
+```
+
+- omponents/: Contains Angular components for the application.
+- services/: Contains Angular services for handling HTTP requests and business logic.
+- styles/: Contains  CSS configuration and custom styles.
+- environments/: Contains environment-specific configurations.
+
+
+# Development
+- Start the development server:
+```
+ng serve
+```
+The application will be served at http://localhost:4200.
+
+- Navigate to the application:
+
+Open your browser and go to http://localhost:4200.
+
+
+# Building
+To build the project for production, use the following command:
+
+```
+ng build --prod
+```
+The build artifacts will be stored in the dist/ directory.
+
+# Usage
+
+- Viewing Employees:
+
+    -The main page displays a list of employees fetched from the backend API.
+
+-Adding an Employee:
+
+    -Click the "Add Employee" button and fill in the required details in the form. Click "Save" to add the employee.
+
+- Editing an Employee:
+
+    - Click the "Edit" button next to an employee's details, update the information in the form, and click "Save".
+
+- Deleting an Employee:
+
+    - Click the "Delete" button next to an employee's details and confirm the deletion.
+
+
+
 
 
