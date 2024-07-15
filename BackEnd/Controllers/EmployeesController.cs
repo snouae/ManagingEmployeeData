@@ -49,34 +49,70 @@ public class EmployeesController : ControllerBase
     }
 
     //Update Employee
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutEmployee(Guid id, Employee employee)
-    {
-        if (id != employee.Id)
+            [HttpPut("{id}")]
+        public async Task<IActionResult> PutEmployee(Guid id,
+            Guid? Id,
+            string? FirstName,
+            string? LastName,
+            string? Email,
+            string? PhoneNumber,
+            string? Position,
+            string? Department)
         {
-            return BadRequest();
-        }
+            Console.WriteLine("Received request to update Employee with ID: " + id);
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Received ID: " + Id);
 
-        _context.Entry(employee).State = EntityState.Modified;
 
-        try
-        {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!EmployeeExists(id))
+            if (id != Id)
+            {
+                return BadRequest("Mismatched IDs"); 
+            }
+
+        
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null)
             {
                 return NotFound();
             }
-            else
-            {
-                throw;
-            }
-        }
 
-        return NoContent();
-    }
+           
+            if (Id.HasValue)
+                employee.Id = Id.Value;
+            if (FirstName != null)
+                employee.FirstName = FirstName;
+            if (LastName != null)
+                employee.LastName = LastName;
+            if (Email != null)
+                employee.Email = Email;
+            if (PhoneNumber != null)
+                employee.PhoneNumber = PhoneNumber;
+            if (Position != null)
+                employee.Position = Position;
+            if (Department != null)
+                employee.Department = Department;
+
+        
+            _context.Entry(employee).State = EntityState.Modified;
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EmployeeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent(); 
+
+
 
     //Delete Employee
     [HttpDelete("{id}")]

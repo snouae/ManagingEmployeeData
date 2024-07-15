@@ -8,14 +8,15 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ CommonModule, RouterOutlet, NavbarComponent, EmployeeListComponent],
+  imports: [ CommonModule, RouterOutlet, NavbarComponent, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'task-manager';
+  title = 'task';
 
 }

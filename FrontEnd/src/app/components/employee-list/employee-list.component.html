@@ -1,4 +1,3 @@
-<!-- employee-list.component.html -->
 <h2 class="employee-list-title">Employee List</h2>
 
 <div *ngIf="employees.length > 0; else noEmployees">
@@ -6,6 +5,7 @@
         <li *ngFor="let employee of employees">
             {{ employee.firstName }} - {{ employee.position }}
             <button (click)="deleteEmployee(employee.id)">Delete</button>
+            <button (click)="editEmployee(employee)">Update</button>
         </li>
     </ul>
 </div>

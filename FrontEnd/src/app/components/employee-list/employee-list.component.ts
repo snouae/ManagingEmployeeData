@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -17,8 +18,10 @@ import { CommonModule } from '@angular/common';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
-
-  constructor(private employeeService: EmployeeService) { }
+    constructor(
+    private router: Router,
+    private employeeService: EmployeeService
+  ) {}
 
   ngOnInit(): void {
     this.getEmployees();
@@ -34,5 +37,11 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.deleteEmployee(id).subscribe(() => {
       this.getEmployees();
     });
+  }
+
+   editEmployee(employee: Employee): void {
+     this.employeeService.setCurrentEmployee(employee);
+     console.log(employee.id);
+    this.router.navigate(['/employees', employee.id,]);
   }
 }
